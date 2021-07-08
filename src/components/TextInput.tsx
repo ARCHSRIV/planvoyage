@@ -11,6 +11,7 @@ const TextInput = ({ errorText, ...props }: Props) => (
       style={styles.input}
       selectionColor={theme.colors.secondary}
       underlineColor="transparent"
+      underlineColorAndroid="transparent"
       mode="flat"
       theme={{roundness: 40}}
       {...props}
@@ -36,8 +37,7 @@ const styles = StyleSheet.create({
     borderColor: '#CCF2F4',
     borderWidth: 1,
     fontSize: 16,
-    paddingLeft: 30,
-    
+    paddingLeft: 30
   },
   error: {
     fontSize: 14,
