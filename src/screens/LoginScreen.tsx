@@ -85,7 +85,7 @@ const LoginScreen = ({ navigation }: Props) => {
         </TouchableOpacity>
       </View>
 
-      <Button mode="contained" onPress={_onLoginPressed}>
+      <Button mode="contained" onPress={() => navigation.navigate('SelectEventType')}>
         Sign in
       </Button>
 

@@ -25,8 +25,8 @@ type Props = {
 const CorporateWhen = ({ navigation }: Props) => {
   return (
     <KeyboardAwareScrollView >
-      <View style={{ minHeight: '80%' }}>
-        <GlobalHeader />
+      <View style={{ minHeight: 750 }}>
+        <GlobalHeader primaryHeading="CORPORATE" secondaryHeading="- When, Where and How many?" />
         <View>
           <ProgressBar
             progress={0.05}
@@ -45,29 +45,31 @@ const CorporateWhen = ({ navigation }: Props) => {
           }}
         >
           <View style={{ width: 'auto', flexDirection: 'row' }}>
-            <View style={styles.progressbox}>
+            <View style={styles.progressbox} onPress={() => navigation.navigate('corporateWhen')}>
               <Image
                 style={styles.image}
                 source={require('../assets/when.png')}
               />
               <Text style={styles.progressboxtext}>WHEN</Text>
             </View>
-
-            <View style={styles.progressbox}>
+            
+            <TouchableOpacity onPress={() => navigation.navigate('Ballpark')}>
+            <View style={styles.progressbox} >
               <Image
                 style={styles.image}
                 source={require('../assets/program.png')}
               />
               <Text style={styles.progressboxtext}>BALLPARK</Text>
             </View>
+            </TouchableOpacity>
+            
 
+            <TouchableOpacity onPress={() => navigation.navigate('CorporateWhere')}>
             <View style={styles.progressbox}>
-              <Image
-                style={styles.image}
-                source={require('../assets/program.png')}
-              />
+              <Image style={styles.image} source={require('../assets/program.png')}/>
               <Text style={styles.progressboxtext}>PROGRAM</Text>
             </View>
+            </TouchableOpacity>
           </View>
         </View>
         <View>
@@ -82,20 +84,19 @@ const CorporateWhen = ({ navigation }: Props) => {
             margin: 20,
           }}
         >
-          <Button mode="contained" style={styles.button}>
+          <Button onPress={() => navigation.navigate('CorporateWhen')}
+            mode="contained" 
+            style={styles.button}>
             When
           </Button>
 
-          <Button
-            onPress={() => navigation.navigate('CorporateWhere')}
+          <Button onPress={() => navigation.navigate('CorporateWhere')}
             mode="contained"
-            style={styles.button}
-          >
+            style={styles.button}>
             Where
           </Button>
 
-          <Button
-            onPress={() => navigation.navigate('CorporateHowmany')}
+          <Button onPress={() => navigation.navigate('CorporateHowmany')}
             mode="contained"
             style={styles.button}
           >
@@ -116,19 +117,15 @@ const CorporateWhen = ({ navigation }: Props) => {
         >
           <View style={{ width: 'auto', flexDirection: 'row' }}>
             {/* <View style={{justifyContent: 'center'}}> */}
-            <Button
-              onPress={() => navigation.navigate('SelectEventtype')}
+            <Button onPress={() => navigation.navigate('SelectEventType')}
               mode="contained"
-              style={styles.button}
-            >
-              {' '}
+              style={styles.button}>
+              
               BACK{' '}
             </Button>
-            <Button
+            <Button onPress={() => navigation.navigate('CorporateWhere')}
               mode="contained"
-              style={styles.button}
-              onPress={() => navigation.navigate('CorporateWhere')}
-            >
+              style={styles.button}>
               NEXT
             </Button>
             {/* </View> */}

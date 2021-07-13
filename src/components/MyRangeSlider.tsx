@@ -11,16 +11,14 @@ export const CustomRangeSlider = () => {
     <View style={styles.container}>
       <View>
         <RangeSlider
-          min={5}
-          max={25}
+          min={10}
+          max={500}
           fromValueOnChange={value => setFromValue(value)}
-          toValueOnChange={value => setToValue(value)}
-          initialFromValue={11}
-        />
-        <Text>from value: {fromValue}</Text>
-        <Text>to value: {toValue}</Text>
+          toValueOnChange={value => setToValue(value)} initialFromValue={10} />
+        {/* <Text>from value: {fromValue}</Text>
+        <Text>to value: {toValue}</Text> */}
       </View>
-      <View>
+      {/* <View>
         <Slider
           min={0}
           max={40}
@@ -33,7 +31,7 @@ export const CustomRangeSlider = () => {
           outOfRangeBarColor="orange"
         />
         <Text>value: {value}</Text>
-      </View>
+      </View> */}
     </View>
   );
 };

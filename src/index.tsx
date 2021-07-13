@@ -12,7 +12,12 @@ import {
   SelectEventType,
   CorporateWhen,
   CorporateWhere,
-  CorporateHowmany
+  CorporateHowmany,
+  Ballpark,
+  BallparkProgElements,
+  CorporateEventSchedule,
+  CorporateEventSchedule2,
+  CorporateEventSchedule3
 } from './screens';
 
 const Router = createStackNavigator(
@@ -27,7 +32,12 @@ const Router = createStackNavigator(
     SelectEventType,
     CorporateWhen,
     CorporateWhere,
-    CorporateHowmany
+    CorporateHowmany,
+    Ballpark,
+    BallparkProgElements,
+    CorporateEventSchedule,
+    CorporateEventSchedule2,
+    CorporateEventSchedule3
   },
   {
     initialRouteName: 'HomeScreen',

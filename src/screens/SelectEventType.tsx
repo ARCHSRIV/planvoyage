@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { StyleSheet, View, Image, Text} from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
@@ -24,42 +24,51 @@ const SelectEventType = ({ navigation }: Props) => {
 // };
 
   return(
-         <KeyboardAwareScrollView>
+    
+      <KeyboardAwareScrollView>
+      <View style={{ minHeight: 750 }}>
          {/* <Background > */}
       <BackButton goBack={() => navigation.navigate('RegisterScreen')}/>
       
       
-      <GlobalHeader />
+      <GlobalHeader primaryHeading="CORPORATE" secondaryHeading="- When, Where and How many?" />
       
 
       <Text style={styles.title}>Select Event Type</Text>
       
       <View style={{display: 'flex', alignItems:'center',justifyContent: 'center',
-            padding: 20,margin: 20}}>
+            padding: 20, margin: 20, marginBottom:500 }} >
       <View style={{width:'auto', flexDirection:'row'}}>
 
-      <View style={styles.progressbox}>
+      <TouchableOpacity onPress={() => navigation.navigate('SocialScreen')}>
+      <View style={styles.progressbox} >
       <Image style={styles.image} source={require('../assets/social.png')} />
       <Text style={styles.progressboxtext}> Social</Text>
       </View>
+      </TouchableOpacity>
 
-     
+      <TouchableOpacity onPress={() => navigation.navigate('CorporateWhen')}>
       <View style={styles.progressbox}>
       <Image style={styles.image} source={require('../assets/corporate.png')}/>
       <Text style={styles.progressboxtext}>Corporate</Text>
       </View>
+      </TouchableOpacity>
       
       </View>
       </View>
       
-      <GlobalFooter/>
     {/* </Background>  */}
+    <GlobalFooter/>
+    </View>
     </KeyboardAwareScrollView>
+    
+    
   )
 };
 
   const styles = StyleSheet.create({
     progressbox:{
+      alignContent:"center",
       borderColor:"#00c2cb",
       borderWidth:1,
       borderRadius:5,
@@ -78,6 +87,7 @@ const SelectEventType = ({ navigation }: Props) => {
         bottom:10
       },
       image: {
+        alignContent:"center",
         width: 15,
         height: 15,
         position: 'absolute',

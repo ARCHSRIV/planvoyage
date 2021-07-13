@@ -25,8 +25,8 @@ const CorporateWhere = ({ navigation }: Props) => {
   return (
     <KeyboardAwareScrollView >
       {/* <View style={{ minHeight: '100%' }}> */}
-      <View>
-        <GlobalHeader />
+      <View style={{ minHeight: 750}}>
+        <GlobalHeader primaryHeading="CORPORATE" secondaryHeading="- When, Where and How many?" />
         <View>
           <ProgressBar
             progress={0.05}
@@ -35,39 +35,32 @@ const CorporateWhere = ({ navigation }: Props) => {
           />
           <Text style={styles.progressbartext}>5%</Text>
         </View>
-        <View
-          style={{
+        <View style={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: 20,
-            margin: 0,
-          }}
-        >
+            alignItems: 'center', justifyContent: 'center', padding: 20, margin: 0,}}>
           <View style={{ width: 'auto', flexDirection: 'row' }}>
+
+
+          <TouchableOpacity onPress={() => navigation.navigate('CorporateWhen')}>
             <View style={styles.progressbox}>
-              <Image
-                style={styles.image}
-                source={require('../assets/when.png')}
-              />
+              <Image style={styles.image} source={require('../assets/when.png')}/>
               <Text style={styles.progressboxtext}>WHEN</Text>
             </View>
-
+            </TouchableOpacity>
+            
+            <TouchableOpacity onPress={() => navigation.navigate('Ballpark')}>
             <View style={styles.progressbox}>
-              <Image
-                style={styles.image}
-                source={require('../assets/program.png')}
-              />
+              <Image style={styles.image} source={require('../assets/program.png')}/>
               <Text style={styles.progressboxtext}>BALLPARK</Text>
             </View>
+            </TouchableOpacity>
 
+            <TouchableOpacity onPress={() => navigation.navigate('Program')}>
             <View style={styles.progressbox}>
-              <Image
-                style={styles.image}
-                source={require('../assets/program.png')}
-              />
+              <Image style={styles.image} source={require('../assets/program.png')}/>
               <Text style={styles.progressboxtext}>PROGRAM</Text>
             </View>
+            </TouchableOpacity>
           </View>
         </View>
         <View>
@@ -88,17 +81,13 @@ const CorporateWhere = ({ navigation }: Props) => {
 
           <Button
             onPress={() => navigation.navigate('CorporateWhere')}
-            mode="contained"
-            style={styles.button}
-          >
+            mode="contained" style={styles.button}>
             Where
           </Button>
 
           <Button
             onPress={() => navigation.navigate('CorporateHowmany')}
-            mode="contained"
-            style={styles.button}
-          >
+            mode="contained" style={styles.button}>
             How Many
           </Button>
         </View>
@@ -108,13 +97,7 @@ const CorporateWhere = ({ navigation }: Props) => {
         <View style={styles.content}>
           <TextInput
             label="Select Hotel Name (Google search)"
-            returnKeyType="done"
-            // value={confpassword.value}
-            // onChangeText={text => setConfPassword({ value: text, error: '' })}
-            // error={!!confpassword.error}
-            // errorText={confpassword.error}
-            // secureTextEntry
-          />
+            returnKeyType="done" />
           {/* <Calender/> */}
         </View>
         <View
@@ -127,10 +110,10 @@ const CorporateWhere = ({ navigation }: Props) => {
           }}
         >
           <View style={{ width: 'auto', flexDirection: 'row' }}>
-            <Button mode="contained" style={styles.button}>
+            <Button onPress={() => navigation.navigate('CorporateWhen')} mode="contained" style={styles.button}>
               BACK
             </Button>
-            <Button mode="contained" style={styles.button}>
+            <Button onPress={() => navigation.navigate('CorporateHowmany')} mode="contained" style={styles.button}>
               NEXT
             </Button>
           </View>
