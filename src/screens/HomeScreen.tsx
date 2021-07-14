@@ -24,7 +24,7 @@ const HomeScreen = ({ navigation }: Props) => (
     <Button mode="contained" onPress={() => navigation.navigate('RegisterScreen')}>
       Sign Up
     </Button>
-    {/* <Button mode="contained" onPress={() => navigation.navigate('CorporateWhen')}>
+    {/* <Button mode="contained" onPress={() => navigation.navigate('CorporateEventSchedule4')}>
     CorporateWhen
     </Button> */}
     {/* <Button mode="contained" onPress={() => navigation.navigate('CorporateWhere')}>
