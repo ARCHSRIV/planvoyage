@@ -19,11 +19,12 @@ type Props = {
     navigation: Navigation;
 };
 
-const CorporateEventSchedule10 = ({ navigation }: Props) => {
+const CorporateEventSchedule11 = ({ navigation }: Props) => {
     const [checked, setChecked] = useState('No');
+
     return(
         <KeyboardAwareScrollView>
-    <View style={{ minHeight: 750 }}>
+            <View style={{ minHeight: 750 }}>
         <GlobalHeader primaryHeading="CORPORATE" secondaryHeading="- When, Where and How many?" />
         <View>
             <ProgressBar progress={0.22} color={Colors.blue200} style={styles.progressbar} />
@@ -45,7 +46,7 @@ const CorporateEventSchedule10 = ({ navigation }: Props) => {
                         <TouchableOpacity onPress={() => navigation.navigate('explore')}>
                             <View style={styles.progressbox}>
                                 <Image style={styles.image} source={require('../assets/when.png')} />
-                                <Text style={styles.progressboxtext}>DIRTY WORK</Text>
+                                <Text style={styles.progressboxtext}>LASTING</Text>
                             </View>
                             <Text >lets Ballpark your budget</Text>
                         </TouchableOpacity>
@@ -61,36 +62,43 @@ const CorporateEventSchedule10 = ({ navigation }: Props) => {
         </View>
 
         <View>
-            <Text style={styles.title}>DONT'T FORGET ABOUT THE DIRTY WORK</Text>
+            <Text style={styles.title}>LEAVE EM' WITH A LASTING IMPRESSION</Text>
         </View>
 
-        <View style={styles.radiocontainer}>
+        <Text style={styles.title}>Are you interested in seeing gifts/favor ideas ?</Text>
+                <View style={styles.radiocontainer}>
                     <RadioButton
                         value="Yes"
                         status={checked === 'Yes' ? 'checked' : 'unchecked'}
                         onPress={() => setChecked('Yes')} />
-                    <Text style={{ paddingTop: 6 }}>We will send you info on this regardnitatiPeoples .You never want a guest to walk around with a dirty plate!</Text>
-        </View>
+                    <Text style={{ paddingTop: 6 }}> Yes </Text>
+                    <RadioButton
+                        value="No"
+                        status={checked === 'No' ? 'checked' : 'unchecked'}
+                        onPress={() => setChecked('No')} />
+                    <Text style={{ paddingTop: 6 }}> No </Text>
+                </View>
 
-        <View style={{
+
+
+                <View style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     padding: 20, margin: 0 }}>
                     <View style={{ width: 'auto', flexDirection: 'row' }}>
-                        <Button onPress={() => navigation.navigate('CorporateEventSchedule9')} mode="contained" style={styles.button}>
+                        <Button onPress={() => navigation.navigate('CorporateEventSchedule10')} mode="contained" style={styles.button}>
                             BACK
                         </Button>
-                        <Button onPress={() => navigation.navigate('CorporateEventSchedule10')} mode="contained" style={styles.button}>
+                        <Button onPress={() => navigation.navigate('CorporateEventSchedule11')} mode="contained" style={styles.button}>
                             NEXT
                         </Button>
                     </View>
                 </View>
 
-        <GlobalFooter/>
-        </View>>
-        </KeyboardAwareScrollView>
-
-)};
-
+            <GlobalFooter/>
+      </View>
+   </KeyboardAwareScrollView>
+    )
+};
 
 const styles = StyleSheet.create({
     progressbox: {
@@ -195,4 +203,4 @@ const styles = StyleSheet.create({
 }
 });
 
-export default memo(CorporateEventSchedule10);
+export default memo(CorporateEventSchedule11);
